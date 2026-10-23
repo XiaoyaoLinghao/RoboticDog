@@ -32,13 +32,13 @@ Claude初始化model为 `deepseek-v4.1-flash[1m]`；不传模型覆盖参数，�
 
 无操作调用的工具清单包含PowerShell/Read/Glob/Grep等；后续调用按任务收窄。PowerShell smoke仅执行Get-Location且返回正确工作目录；无permission denial。只读复核仅允许Read/Glob/Grep；配置探测仅允许一条完整CMake命令。
 
-## 主机编译器阻塞及待授权方案
+## 主机编译器探测及用户后续安排
 
 首次通过Claude执行的CMake配置退出1：`No CMAKE_CXX_COMPILER could be found.`，完整命令与输出见 [environment-probe.txt](logs/environment-probe.txt)。编译和测试均未运行，不能把历史Linux报告记成本机通过。
 
-已向用户提出：从[LLVM-MinGW官方仓库20261020发布](https://github.com/mstorsjo/llvm-mingw/releases/tag/20261020)下载 `llvm-mingw-20261020-ucrt-x86_64.zip`（190612575字节），校验发布方摘要后仅解压到本项目 `.local/toolchains/`，不修改全局PATH。尚未获得答复前不下载/安装。
+曾向用户提出从[LLVM-MinGW官方仓库20261020发布](https://github.com/mstorsjo/llvm-mingw/releases/tag/20261020)下载 `llvm-mingw-20261020-ucrt-x86_64.zip`（190612575字节），校验后仅解压到本项目。用户随后指定VS Code中的相应AI承担代码修改、调试、编译和后续烧录。因此本方案不执行，本轮无下载/安装，转交[VS Code接手流程](../VSCODE_HANDOFF.zh-CN.md)。
 
-发布方SHA-256：`fd5462b7f5d93b2ff981fcd3f9c7e427e47f3203c64ea91c27bcc444eebd74cd`。授权后还需验证版本、编译/运行路径及sanitizer实际支持，不能预先标通过。
+留档的发布方SHA-256：`fd5462b7f5d93b2ff981fcd3f9c7e427e47f3203c64ea91c27bcc444eebd74cd`。此记录不表示已安装或测试过该工具链。接手方使用其经核实的主机编译环境并记录sanitizer实际支持。
 
 ## GitHub同步路径
 
