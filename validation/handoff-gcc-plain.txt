@@ -1,0 +1,8 @@
+g++ (Debian 14.2.0-19) 14.2.0
+PASS protocol: golden bytes, signed reads, limits, resync, wrap, 4335 roundtrips, 200000 noise bytes
+PASS bus: unbound disabled, async TX/RX, echo/unrelated rejection, partial RX, deadline wrap, cancellation, faults, no ACK assumption
+PASS safety: fail-closed defaults, unique IDs, calibration/geometry/electrical gates, atomic plan, limits/NaN/speed/step, stale data, latched faults, watchdog/wrap
+All 44176 kinematics checks passed
+Host dry-run only. Transport ready: no. Configuration accepted: no.
+No servo IDs, pin assignments, or mechanical limits are configured. No hardware I/O.
+PASS all 5 host executables (plain)
