@@ -1,0 +1,8 @@
+UpdateCTestConfiguration  from :D:/WorkSpace/RoboticDog/build-m0-asan/DartConfiguration.tcl
+Test project D:/WorkSpace/RoboticDog/build-m0-asan
+Constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+No tests were found!!!

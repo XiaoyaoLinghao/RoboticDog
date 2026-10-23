@@ -42,6 +42,8 @@ Claude初始化model为 `deepseek-v4.1-flash[1m]`；不传模型覆盖参数，�
 
 ## GitHub同步路径
 
+2026-10-23用户完成Git安装后，主协调核实`C:\Program Files\Git\cmd\git.exe`为`2.56.0.windows.2`，后续优先显式使用此路径。已有进程仍可能解析到旧运行时Git；不更改历史日志中的2.53.0版本。VS Code插件的复验失败证据与后续工具建议见[VSCODE_REVIEW](VSCODE_REVIEW.zh-CN.md)。
+
 仓库metadata确认main为空起点且连接器有写权限。最初README通过连接器创建，使用其已认证作者信息为本仓库设置local Git身份（不改global）。
 
 Git CLI推送在关闭交互的情况下失败：`could not read Username for https://github.com: terminal prompts disabled`。未复制token或改凭据。后续通过已连接GitHub工具创建树/提交并以预期旧HEAD、非强制方式更新main，再fetch核对本地暂存树一致，保留本地旧提交后soft对齐。GitHub同步已成功，不将CLI认证失败冒充整个连接器不可用。

@@ -11,6 +11,8 @@
 | GitHub记录 | PASS | 原始源码快照、项目任务/架构已同步；本地与远程源树核对一致 |
 | Claude无操作与工具检查 | PASS | 2.1.308，PowerShell，既有deepseek-v4.1-flash[1m]；Get-Location受限调用成功 |
 | 本机CMake配置探测 | FAIL | 找不到CMAKE_CXX_COMPILER，退出1，见logs/environment-probe.txt |
+| VS Code配置与构建复验尝试 | FAIL | 三套配置与后续构建均失败；见VSCODE_BASELINE_RESULT与独立审查VSCODE_REVIEW |
+| VS Code三套CTest调用 | NOT_RUN（测试用例） | 工具调用完成但均为零测试；protocol/bus/safety/kinematics/dry_run全部未运行，不能记PASS |
 | Debug T01–T05 | NOT_RUN | 配置未完成，无主机编译器 |
 | Release T01–T05 | NOT_RUN | 同上；不能用O2历史报告替代 |
 | ASan/UBSan | NOT_RUN | 同上，支持能力尚未确认 |

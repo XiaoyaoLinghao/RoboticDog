@@ -1,6 +1,6 @@
 # M0阶段报告
 
-日期：2026-10-23（Asia/Shanghai）。当前结论：**M0文档、完整静态审查及第二意见核对已完成；基线测试待VS Code接手环境回传，M0尚未验收通过。M1未开始。**
+日期：2026-10-23（Asia/Shanghai）。当前结论：**M0文档、完整静态审查及第二意见核对已完成；VS Code已回传阻塞报告，仍未找到可用主机C++编译器，五项测试未运行。M0尚未验收通过，M1未开始。**
 
 ## 已完成的工作
 
@@ -24,6 +24,8 @@
 | ARM构建、硬件验证 | NOT_RUN；本轮范围外 |
 
 详见[环境与来源](ENVIRONMENT.zh-CN.md)、[实际配置日志](logs/environment-probe.txt)、[验收矩阵](ACCEPTANCE_MATRIX.zh-CN.md)。已安装的arm-none-eabi编译器不能用来声称Windows主机测试通过。
+
+VS Code接手方随后在同一台电脑进行了三套配置、构建及CTest尝试，仍因缺少主机编译器受阻。CTest显示零测试，不能记为通过。主协调核对了10份日志及相关会话工具记录，接纳为阻塞证据；见[VS Code报告](VSCODE_BASELINE_RESULT.zh-CN.md)与[独立审查及工具建议](VSCODE_REVIEW.zh-CN.md)。
 
 ## 源码审查结论
 
