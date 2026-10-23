@@ -1,0 +1,16 @@
+M0 environment configure probe; source HEAD 48950e156baa039c0aa6e653e29063ad1a5a7403
+Working directory: C:\Users\zhy76\.codex\worktrees\m0-baseline-review\RoboticDog
+Executor: Claude Code CLI 2.1.308; existing configured provider/model; PowerShell only
+COMMAND: & 'C:\ST\STM32CubeCLT_1.22.0\CMake\bin\cmake.exe' -S 'C:\Users\zhy76\.codex\worktrees\m0-baseline-review\RoboticDog\firmware' -B 'C:\Users\zhy76\.codex\worktrees\m0-baseline-review\RoboticDog\build-m0-environment-probe' -G Ninja '-DCMAKE_MAKE_PROGRAM=C:/ST/STM32CubeCLT_1.22.0/Ninja/bin/ninja.exe' -DCMAKE_BUILD_TYPE=Debug -DROBOT_ENABLE_SANITIZERS=OFF
+Exit code 1
+-- The CXX compiler identification is unknown
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_CXX_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+  to the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+Configure: FAIL (missing host compiler). Build/tests: NOT_RUN. No source changes.

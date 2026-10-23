@@ -20,6 +20,7 @@ DIY 12DOF 四足机器人：先固定单腿台架，再实现平整室内地面�
 - [控制架构与硬件、执行器、输入协议抽象](docs/architecture/CONTROL_ARCHITECTURE.zh-CN.md)
 - [工作方式与GitHub同步规则](docs/WORKFLOW.zh-CN.md)
 - [当前进度](docs/PROGRESS.zh-CN.md)
+- [M0报告与实际验证证据](docs/m0/M0_REPORT.zh-CN.md)
 - [原始交接入口](START_HERE.md)、[原始验收用例](ACCEPTANCE_TESTS.md)
 
 根目录旧交接文档与 `firmware/docs/` 描述交接时的v0.1。当前范围、授权和方案以本README及 `docs/` 中注明日期的项目文档为准；历史测试报告不替代本机复验。
