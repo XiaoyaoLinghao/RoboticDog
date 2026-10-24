@@ -1,0 +1,65 @@
+[
+  {
+    "step": 1,
+    "tool": "PowerShell",
+    "command": "& 'C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe' -S 'D:\\WorkSpace\\RoboticDog\\firmware' -B 'D:\\WorkSpace\\RoboticDog\\build-m0-msvc-debug' -G 'Visual Studio 18 2026' -A x64 '-DCMAKE_GENERATOR_INSTANCE=C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools' -DROBOT_BUILD_HOST_TESTS=ON -DROBOT_ENABLE_SANITIZERS=OFF",
+    "cwd": "D:\\WorkSpace\\RoboticDog",
+    "is_error": false,
+    "numeric_exit_code": null,
+    "log": "01-configure-debug.log"
+  },
+  {
+    "step": 2,
+    "tool": "PowerShell",
+    "command": "& 'C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe' --build 'D:\\WorkSpace\\RoboticDog\\build-m0-msvc-debug' --config Debug",
+    "cwd": "D:\\WorkSpace\\RoboticDog",
+    "is_error": false,
+    "numeric_exit_code": null,
+    "log": "02-build-debug.log"
+  },
+  {
+    "step": 3,
+    "tool": "PowerShell",
+    "command": "& 'C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\ctest.exe' --test-dir 'D:\\WorkSpace\\RoboticDog\\build-m0-msvc-debug' -C Debug --output-on-failure -V --no-tests=error",
+    "cwd": "D:\\WorkSpace\\RoboticDog",
+    "is_error": false,
+    "numeric_exit_code": null,
+    "log": "03-ctest-debug.log"
+  },
+  {
+    "step": 4,
+    "tool": "PowerShell",
+    "command": "& 'C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe' -S 'D:\\WorkSpace\\RoboticDog\\firmware' -B 'D:\\WorkSpace\\RoboticDog\\build-m0-msvc-release' -G 'Visual Studio 18 2026' -A x64 '-DCMAKE_GENERATOR_INSTANCE=C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools' -DROBOT_BUILD_HOST_TESTS=ON -DROBOT_ENABLE_SANITIZERS=OFF",
+    "cwd": "D:\\WorkSpace\\RoboticDog",
+    "is_error": false,
+    "numeric_exit_code": null,
+    "log": "04-configure-release.log"
+  },
+  {
+    "step": 5,
+    "tool": "PowerShell",
+    "command": "& 'C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe' --build 'D:\\WorkSpace\\RoboticDog\\build-m0-msvc-release' --config Release",
+    "cwd": "D:\\WorkSpace\\RoboticDog",
+    "is_error": false,
+    "numeric_exit_code": null,
+    "log": "05-build-release.log"
+  },
+  {
+    "step": 6,
+    "tool": "PowerShell",
+    "command": "& 'C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\ctest.exe' --test-dir 'D:\\WorkSpace\\RoboticDog\\build-m0-msvc-release' -C Release --output-on-failure -V --no-tests=error",
+    "cwd": "D:\\WorkSpace\\RoboticDog",
+    "is_error": false,
+    "numeric_exit_code": null,
+    "log": "06-ctest-release.log"
+  },
+  {
+    "step": 7,
+    "tool": "PowerShell",
+    "command": "& 'C:\\ST\\STM32CubeCLT_1.22.0\\CMake\\bin\\cmake.exe' -S 'D:\\WorkSpace\\RoboticDog\\firmware' -B 'D:\\WorkSpace\\RoboticDog\\build-m0-msvc-sanitizer' -G 'Visual Studio 18 2026' -A x64 '-DCMAKE_GENERATOR_INSTANCE=C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools' -DROBOT_BUILD_HOST_TESTS=ON -DROBOT_ENABLE_SANITIZERS=ON",
+    "cwd": "D:\\WorkSpace\\RoboticDog",
+    "is_error": true,
+    "numeric_exit_code": 1,
+    "log": "07-configure-sanitizer.log"
+  }
+]

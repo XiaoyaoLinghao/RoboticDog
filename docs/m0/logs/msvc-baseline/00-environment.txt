@@ -1,0 +1,31 @@
+Coordinator-verified environment and installation ledger (not raw installer output)
+Date: 2026-10-23 Asia/Shanghai
+Test source HEAD: 93a221a2baee2eb0ae8b58c0f636fddb8bf6455b
+Workspace: D:\WorkSpace\RoboticDog
+OS: Windows 11, 10.0.26200, x64
+User explicitly authorized Build Tools, MSVC and Windows SDK installation.
+Bootstrapper source: https://aka.ms/vs/stable/vs_buildtools.exe
+Authenticode: Valid; Microsoft Corporation
+Bootstrapper SHA256: 994DDAA3C0A5795AD700FAFBC6414C1ED5B580C32EB29BBE46F4E21388EB5DF3
+Installer arguments: --quiet --wait --norestart --add Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows11SDK.26100
+Installer exit code: 0
+Installation completed at: 2026-10-23T22:35:16+08:00
+Build Tools: Visual Studio 2026 18.11.1 (18.11.12315.225), stable
+Install path: C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools
+vswhere component check: MSVC x64/x86 and Windows11SDK.26100 present; isComplete=true; isLaunchable=true; isPrerelease=false; isRebootRequired=false
+MSVC compiler: 19.51.36260.0
+Compiler path: C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Tools\MSVC\14.51.36231\bin\Hostx64\x64\cl.exe
+Windows SDK selected by CMake: 10.0.26100.0
+SDK include path: C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0
+CMake/CTest: 4.3.1, C:\ST\STM32CubeCLT_1.22.0\CMake\bin
+Generator: Visual Studio 18 2026, x64; Debug/Release selected via --config / -C
+Git: 2.56.0.windows.2, C:\Program Files\Git\cmd\git.exe
+Claude Code: 2.1.308, existing configured model deepseek-v4.1-flash[1m]
+Native launch flags (process only): CLAUDE_CODE_USE_POWERSHELL_TOOL=1; CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1
+No-action init.tools: PowerShell, Read; native Get-Location smoke returned D:\WorkSpace\RoboticDog.
+Verification tool inventory: PowerShell only. Seven exact single commands; no file tools or other shells.
+Two dontAsk invocations denied the first configure command before execution. Both stopped and preserved their records. These were permission denials, not compiler failures.
+Completed verification used the same native PowerShell tool in interactive manual mode. Coordinator checked each command and selected one-time Yes, never the persistent 'do not ask again' option. No bypass flags or global tool permission changes. Project folder trust was acknowledged at interactive startup.
+Steps 1-6: tool is_error=false; separate numeric exit codes were not present in native tool records. CTest output explicitly reports 5/5 passed in each configuration.
+Step 7: tool explicitly reported Exit code 1, This sanitizer configuration requires GCC or Clang. No sanitizer build/test followed.
+Full local CLI and installer records remain in ignored local storage; no credentials or complete conversation transcripts are published.

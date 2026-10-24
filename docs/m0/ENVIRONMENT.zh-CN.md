@@ -15,7 +15,7 @@
 
 原始manifest核验对象是原始快照。根目录AGENTS/.gitignore等项目文档后续有经授权修改，不能再用原始包manifest判定整个当前仓库；firmware源manifest仍可用于确认原始源码未改。
 
-## 已核实工具
+## 安装前已核实工具（历史）
 
 | 工具 | 实际位置 | 结果 |
 |---|---|---|
@@ -25,20 +25,38 @@
 | CMake/CTest | `C:\ST\STM32CubeCLT_1.22.0\CMake\bin` | CMake 4.3.1 |
 | Ninja | `C:\ST\STM32CubeCLT_1.22.0\Ninja\bin\ninja.exe` | 1.13.2 |
 | ARM C++ | `C:\ST\STM32CubeCLT_1.22.0\GNU-tools-for-STM32\bin\arm-none-eabi-g++.exe` | 14.3.1；仅确认版本，不能执行Windows主机测试 |
-| Windows主机C++ | PATH、常见安装目录、用户/项目工具目录未找到g++/clang++/cl/clang-cl | 当前BLOCKED |
+| Windows主机C++ | PATH、常见安装目录、用户/项目工具目录未找到g++/clang++/cl/clang-cl | 当时BLOCKED；后续已解除，见下文 |
 | WSL | `C:\Windows\system32\wsl.exe --list --quiet` | 退出1，提示需要安装；不作为已有可用Linux测试环境 |
 
 Claude初始化model为 `deepseek-v4.1-flash[1m]`；不传模型覆盖参数，不改变provider/auth；调用成功验证认证可用。CLI输出过unrecognized_model提示，但实际请求成功，不能将其视为认证失败，也不能把输出改称其他厂商模型。未读取或保存凭据。
 
 无操作调用的工具清单包含PowerShell/Read/Glob/Grep等；后续调用按任务收窄。PowerShell smoke仅执行Get-Location且返回正确工作目录；无permission denial。只读复核仅允许Read/Glob/Grep；配置探测仅允许一条完整CMake命令。
 
-## 主机编译器探测及用户后续安排
+## 早期主机编译器探测及用户安排（历史）
 
 首次通过Claude执行的CMake配置退出1：`No CMAKE_CXX_COMPILER could be found.`，完整命令与输出见 [environment-probe.txt](logs/environment-probe.txt)。编译和测试均未运行，不能把历史Linux报告记成本机通过。
 
 曾向用户提出从[LLVM-MinGW官方仓库20261020发布](https://github.com/mstorsjo/llvm-mingw/releases/tag/20261020)下载 `llvm-mingw-20261020-ucrt-x86_64.zip`（190612575字节），校验后仅解压到本项目。用户随后指定VS Code中的相应AI承担代码修改、调试、编译和后续烧录。因此本方案不执行，本轮无下载/安装，转交[VS Code接手流程](../VSCODE_HANDOFF.zh-CN.md)。
 
 留档的发布方SHA-256：`fd5462b7f5d93b2ff981fcd3f9c7e427e47f3203c64ea91c27bcc444eebd74cd`。此记录不表示已安装或测试过该工具链。接手方使用其经核实的主机编译环境并记录sanitizer实际支持。
+
+## 2026-10-23 后续授权安装与实际测试（2026-10-24整理）
+
+用户随后明确允许主协调安装 Visual Studio Build Tools、MSVC 和 Windows SDK。官方引导程序来自 `https://aka.ms/vs/stable/vs_buildtools.exe`，Authenticode 为 Valid、签名方 Microsoft Corporation；SHA-256 为 `994DDAA3C0A5795AD700FAFBC6414C1ED5B580C32EB29BBE46F4E21388EB5DF3`。安装于2026-10-23 22:35:16（+08:00）完成，退出0；vswhere确认安装完整、可启动、无需重启。未安装LLVM-MinGW。
+
+| 项目 | 实际结果 |
+|---|---|
+| Build Tools | Visual Studio 2026 18.11.1（18.11.12315.225），stable；`C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools` |
+| MSVC | 19.51.36260.0；`VC\Tools\MSVC\14.51.36231\bin\Hostx64\x64\cl.exe`（相对上述安装目录） |
+| Windows SDK | CMake实际选择10.0.26100.0；x64 |
+| CMake/CTest | 4.3.1；生成器 `Visual Studio 18 2026`，以 `--config` / `-C` 选择Debug/Release |
+| Git | 2.56.0.windows.2；`C:\Program Files\Git\cmd\git.exe` |
+| 测试源HEAD | `93a221a2baee2eb0ae8b58c0f636fddb8bf6455b`，firmware仍与原始27项源清单一致 |
+| 基线 | Debug 5/5、Release 5/5 PASS；sanitizer配置退出1，ASan/UBSan/LSan NOT_RUN |
+
+Claude Code 2.1.308保持既有 `deepseek-v4.1-flash[1m]` 配置。仅在启动进程设置两个原生PowerShell开关，先核实初始化工具清单，再以实际 `Get-Location` 调用确认工作目录。两次dontAsk调用在首条配置执行前遭权限拒绝并停止；精确规则未匹配的原因未定。随后交互手动模式逐条单次批准，实际完成7条原生PowerShell命令；没有持久允许、绕过参数或全局权限修改。交互启动确认了项目文件夹信任。前6条工具结果成功但没有单列数字退出码，第7条明确退出1。
+
+完整命令、组件参数与安装核验摘要见[环境账本](logs/msvc-baseline/00-environment.txt)、[命令账本](logs/msvc-baseline/commands.json)；测试输出见[MSVC报告](MSVC_BASELINE_RESULT.zh-CN.md)，独立核对见[审查记录](MSVC_REVIEW.zh-CN.md)。原安装包、安装器日志与CLI完整会话仅保留本地，不上传。安装前失败记录继续作为历史证据，不能覆盖这次实际结果。
 
 ## GitHub同步路径
 

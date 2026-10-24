@@ -1,0 +1,26 @@
+适用于 .NET Framework MSBuild 版本 18.11.1-1.26513.3+940033be3
+
+  1>Checking Build System
+  Building Custom Rule D:/WorkSpace/RoboticDog/firmware/CMakeLists.txt
+  lx16a.cpp
+  bus.cpp
+  safety.cpp
+  kinematics.cpp
+  正在生成代码...
+  robot_core.vcxproj -> D:\WorkSpace\RoboticDog\build-m0-msvc-debug\Debug\robot_core.lib
+  Building Custom Rule D:/WorkSpace/RoboticDog/firmware/CMakeLists.txt
+  dry_run.cpp
+  dry_run.vcxproj -> D:\WorkSpace\RoboticDog\build-m0-msvc-debug\Debug\dry_run.exe
+  Building Custom Rule D:/WorkSpace/RoboticDog/firmware/CMakeLists.txt
+  test_bus.cpp
+  test_bus.vcxproj -> D:\WorkSpace\RoboticDog\build-m0-msvc-debug\Debug\test_bus.exe
+  Building Custom Rule D:/WorkSpace/RoboticDog/firmware/CMakeLists.txt
+  test_kinematics.cpp
+  test_kinematics.vcxproj -> D:\WorkSpace\RoboticDog\build-m0-msvc-debug\Debug\test_kinematics.exe
+  Building Custom Rule D:/WorkSpace/RoboticDog/firmware/CMakeLists.txt
+  test_protocol.cpp
+  test_protocol.vcxproj -> D:\WorkSpace\RoboticDog\build-m0-msvc-debug\Debug\test_protocol.exe
+  Building Custom Rule D:/WorkSpace/RoboticDog/firmware/CMakeLists.txt
+  test_safety.cpp
+  test_safety.vcxproj -> D:\WorkSpace\RoboticDog\build-m0-msvc-debug\Debug\test_safety.exe
+  Building Custom Rule D:/WorkSpace/RoboticDog/firmware/CMakeLists.txt

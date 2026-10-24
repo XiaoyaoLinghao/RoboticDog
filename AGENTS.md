@@ -2,6 +2,8 @@
 
 ## 2026-10-23 当前用户授权与执行方式（优先于下方交接时的默认范围）
 
+- 同日最新授权：用户允许主协调安装Visual Studio Build Tools、MSVC和Windows SDK，安装后继续M0并独立审查，禁止自动进入M1。此授权覆盖本次所需的官方安装组件，不扩展为其他软件的安装授权。测试验证通过本地Claude Code CLI执行；VS Code Claude会话整理回传报告，保持文件工作与命令验证分离。
+- Claude Code每次启动均须检查原生工具库存。仅在启动进程中设置`CLAUDE_CODE_USE_POWERSHELL_TOOL=1`和`CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1`，不得覆盖显式禁用或继承的Shell拒绝规则。先核实`system/init.tools`，再验证精确无害命令；只有实际`tool_use`/`tool_result`算执行证据，不更改全局权限、执行策略或模型/provider。
 - 同日最新补充：用户指定后续代码修改、调试、编译和烧录工作在VS Code中由其相应AI接手。本会话交付原始源码、架构/修改建议并独立核对回传结果；不安装本轮提出的LLVM-MinGW。此项目执行地点与接手者选择优先于下述CLI默认路线；不改变其他项目的全局偏好。详见 docs/VSCODE_HANDOFF.zh-CN.md。
 - 用户已授权整理项目文档并执行M0；M0汇报后等待讨论确认，禁止自动进入M1。硬件仍未到货，本轮无真实I/O。
 - 已确认单线程轮询核心、先三关节独立线性映射；第一阶段固定单腿，单腿评审后再扩展整机。首版行走范围是平整室内、低速、无额外载荷。
