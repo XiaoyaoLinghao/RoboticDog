@@ -2,6 +2,8 @@
 
 更新：2026-10-24（Asia/Shanghai）。PASS只表示表中列出的检查；不外推为实机能力。测试执行日为2026-10-23。
 
+用户已接受当前sanitizer覆盖限制；相应测试状态仍NOT_RUN。当前等待讨论确认[M1方案](../M1_EXECUTION_PLAN.zh-CN.md)，未开始实现。
+
 ## M0当前证据
 
 | 检查 | 状态 | 证据/说明 |
@@ -21,7 +23,7 @@
 | 源码静态审查 | PASS | 表示18个实现/测试/构建文件已审阅并记录问题，不表示源码无缺陷；见SOURCE_REVIEW |
 | 架构文档完整性 | PASS | 有职责、HAL/设备/输入适配、数据、状态、时间、开传/取消/恢复合同和迁移归属；仍待用户确认 |
 | 主协调独立复核 | PASS_WITH_LIMITATIONS | 完整文档差异、原生事件、日志、缓存与27项摘要核对，见MSVC_REVIEW；R01–R09未修复 |
-| M0总门槛 | AWAITING_USER | 基线PASS_WITH_LIMITATIONS，材料完成待用户确认sanitizer限制和架构；M1未开始 |
+| M0总门槛 | AWAITING_USER | 基线PASS_WITH_LIMITATIONS；sanitizer限制已获接受，架构/M1方案仍待确认，开发未开始 |
 
 本次测试由本地Claude CLI实际执行，VS Code会话仅整理报告，主协调独立审查。源HEAD为93a221a，firmware与原始清单一致。前6条命令没有独立数字退出码，不将工具成功推定写成0；实际CTest逐项及总计输出支持5/5结论。上述sanitizer配置FAIL不等于测试FAIL，也不等于sanitizer已通过。
 
