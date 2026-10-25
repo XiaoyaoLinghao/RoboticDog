@@ -1,5 +1,13 @@
 # 当前开发进度
 
+## 2026-10-25 打印准备补充
+
+用户确认使用 PETG。已整理 [P1S 单腿 3D 打印说明](3D_PRINTING_GUIDE.zh-CN.md)，包含固定版本下载、11 件清单、PETG 切片起始参数、逐件候选方向、分批顺序、断电试配和记录模板。温度参考核对 Bambu Studio 官方 Generic PETG 继承配置；具体耗材品牌、打印板与喷嘴仍待实物核对。工艺参数尚未试印，髋主动齿轮版本和轴承配合仍按原清单保持待确认。
+
+本次为文档工作：本地生成 12 页 PDF 并逐页检查排版，Markdown 作为仓库维护版本。未安装工具，未操作打印机或机器人，未修改产品代码或开展 M1 实现及测试。
+
+## 软件状态沿用 2026-10-24
+
 更新时间：2026-10-24（Asia/Shanghai）。当前：M0 **AWAITING_USER**。Debug 5/5、Release 5/5 PASS；sanitizer因项目当前CMake仅接受GCC/Clang而配置退出1，ASan/UBSan/LSan NOT_RUN；主机基线为 **PASS_WITH_LIMITATIONS**。主协调已完成[独立审查](m0/MSVC_REVIEW.zh-CN.md)，等待用户讨论确认。M1/M2未开始；硬件未到，真实输出禁用。安装由用户授权、主协调执行并核实；测试由本地Claude Code CLI执行，VS Code会话仅整理报告并已停止等待。
 
 同日最新用户决定：**已接受当前sanitizer覆盖限制**，不要求现在补装工具或修改构建。当前待确认事项为M1执行链与HAL方案，M0架构细化随该方案一并讨论；不把接受覆盖限制解释为批准M1开发。M1状态 **DESIGN_REVIEW / AWAITING_USER**，全部实现任务仍TODO。

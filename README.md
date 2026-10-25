@@ -18,6 +18,7 @@ DIY 12DOF 四足机器人：先固定单腿台架，再实现平整室内地面�
 
 ## 项目文档
 
+- [P1S PETG 单腿 3D 打印说明](docs/3D_PRINTING_GUIDE.zh-CN.md)、[模型版本与打印数量](PRINT_INVENTORY.zh-CN.md)
 - [里程碑与M0—M2任务清单](docs/ROADMAP.zh-CN.md)
 - [M1执行链与HAL实施方案（待确认）](docs/M1_EXECUTION_PLAN.zh-CN.md)
 - [控制架构与硬件、执行器、输入协议抽象](docs/architecture/CONTROL_ARCHITECTURE.zh-CN.md)
